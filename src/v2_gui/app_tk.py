@@ -10,7 +10,10 @@ from tkinter import ttk
 
 # J'importe la logique métier existante (le moteur).
 # Si ta classe / fichier n'a pas exactement ce nom, tu ajusteras cette ligne.
-from v1_console.main import DiceRoller
+
+from src.core.dice_roller import DiceRoller
+
+
 
 
 class DiceRollerApp(tk.Tk): # hérite de tk.Tk

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Accueil - Xavier Deguercy</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope&amp;family=Montserrat&amp;display=swap" rel="stylesheet"/>
+</head>
+<body>
+<main>
+<section>
+<h1>Journal de projet – Dice Roller Python</h1>
+<p><strong>Contexte :</strong> Projet d’initiation Python, Git et Scrum dans le cadre de la formation Diginamic.</p>
+<p><strong>Produit :</strong> Un simulateur de lancers de dés pour Donjons &amp; Dragons (Dice Roller), en version console dans un premier temps.</p>
+</section>
+<section>
+<h2>1. Objectifs du projet</h2>
+<ul>
+<li>Créer un programme Python permettant de lancer différents dés (d4, d6, d8, d10, d12, d20, d100) pour D&amp;D.</li>
+<li>Structurer le projet de manière professionnelle : arborescence <code>src/</code>, <code>tests/</code>, <code>docs/</code>, Git, branches…</li>
+<li>Appliquer une démarche inspirée de Scrum : backlog, user stories, sprints, incréments successifs.</li>
+<li>Documenter chaque étape pour en faire un livrable pédagogique et un support de démonstration de compétences.</li>
+</ul>
+</section>
+<section>
+<h2>2. Objectifs pédagogiques</h2>
+<ul>
+<li><strong>Git / GitHub :</strong> initialisation de dépôt, arborescence, commits, branches (sprints), README.</li>
+<li><strong>Python :</strong> organisation du code, séparation logique / interface (core vs CLI), fonctions et modules.</li>
+<li><strong>Gestion de projet :</strong> formaliser un cahier des charges fonctionnel, un backlog, des user stories.</li>
+<li><strong>Documentation :</strong> produire des livrables clairs, traçables, publiables (HTML / Markdown).</li>
+</ul>
+</section>
+<section>
+<h2>3. Étapes du projet (timeline)</h2>
+<article>
+<h3>Étape 1 – Initialisation du dépôt Git et création de l’arborescence</h3>
+<p><strong>Objectif :</strong> Créer la base du projet avec une structure claire et l’initialiser sous Git.</p><p><strong>État :</strong> Fait</p>
+<p><strong>Actions réalisées :</strong></p>
+<ul>
+<li>Choix du nom de projet (ex. <code>dice-roller-python</code>).</li>
+<li>Création du dossier du projet et initialisation du dépôt Git.</li>
+<li>Création d’une arborescence standard de projet :</li>
+</ul>
+<pre><code>mon-projet/
+ ├─ src/          # code source
+ │   ├─ main.py
+ │   └─ modules/
+ │
+ ├─ tests/        # tests unitaires
+ ├─ docs/         # documentation
+ ├─ README.md
+ ├─ .gitignore
+ └─ .github/</code></pre>
+<p><strong>Exemple de commandes (Git Bash) :</strong></p>
+<pre><code># Vérifier où l’on se trouve
+pwd
+ls
+
+# Nom du projet
+REPO_NAME="dice-roller-python"
+
+# Création du dossier et entrée dans le dossier
+mkdir "$REPO_NAME"
+cd "$REPO_NAME"
+
+# Initialiser le dépôt Git
+git init
+
+# Créer l’arborescence minimale
+mkdir -p src/modules
+mkdir -p tests
+mkdir -p docs
+mkdir -p .github
+
+# Fichiers de base
+touch src/main.py
+touch src/modules/__init__.py
+touch tests/test_placeholder.py
+touch docs/notes.md
+touch README.md
+touch .gitignore
+</code></pre>
+<p><strong>Compétences mises en avant :</strong></p>
+<ul>
+<li>Organisation d’un projet logiciel (structure <code>src/tests/docs</code>).</li>
+<li>Maîtrise des bases de Git (init, suivi de fichiers).</li>
+<li>Utilisation de Git Bash pour automatiser la création de l’arborescence.</li>
+</ul>
+</article>
+<article>
+<h3>Étape 2 – Création et remplissage du README</h3>
+<p><strong>Objectif :</strong> Documenter dès le départ le but du projet et sa structure.</p><p><strong>État :</strong> Fait</p>
+<p><strong>Actions réalisées :</strong></p>
+<ul>
+<li>Création d’un fichier <code>README.md</code> ou <code>README_[nom_du_dossier].txt</code>.</li>
+<li>Ajout d’une description courte du projet.</li>
+<li>Liste des dossiers principaux et de leur rôle.</li>
+</ul>
+<p><strong>Exemple de contenu :</strong></p>
+<pre><code># dice-roller-python
+
+Projet Dice Roller - Simulateur de jets de dés pour Donjons &amp; Dragons (D&amp;D) en Python.
+
+Structure du projet :
+- src/ : code source de l'application (main.py, modules, etc.)
+- tests/ : tests unitaires
+- docs/ : documentation (cahier des charges, backlog, journal de projet, etc.)
+- .github/ : configuration GitHub (workflows, CI, etc.)
+</code></pre>
+<p><strong>Compétences mises en avant :</strong></p>
+<ul>
+<li>Capacité à présenter un projet de façon synthétique.</li>
+<li>Organisation de la documentation dès le début du projet.</li>
+</ul>
+</article>
+<article>
+<h3>Étape 3 – Cahier des charges fonctionnel (CdCF) Dice Roller</h3>
+<p><strong>Objectif :</strong> Définir clairement ce que doit faire le module Dice Roller.</p><p><strong>État :</strong> Fait</p>
+<p><strong>Actions réalisées :</strong></p>
+<ul>
+<li>Rédaction d’un cahier des charges fonctionnel en HTML (ou Markdown) décrivant :</li>
+<ul>
+<li>Le contexte : utilisation pendant des parties de D&amp;D en ligne.</li>
+<li>Les dés gérés : d4, d6, d8, d10, d12, d20, d100 (avec d100 simulé via 2d10 possible).</li>
+<li>Les fonctionnalités : lancer un ou plusieurs dés, afficher les résultats, calculer une somme.</li>
+<li>Les cas particuliers : échec critique (1) et réussite critique (20) sur les d20.</li>
+<li>Les modificateurs (+X / -X) à appliquer plus tard sur les résultats.</li>
+</ul>
+<li>Positionnement de ce CdCF dans un dossier <code>docs/</code> dédié à la documentation.</li>
+</ul>
+<p><strong>Compétences mises en avant :</strong></p>
+<ul>
+<li>Analyse des besoins à partir d’un usage réel (D&amp;D, Baldur’s Gate 3, avantage/désavantage, etc.).</li>
+<li>Rédaction d’un cahier des charges fonctionnel structuré.</li>
+<li>Préparation du terrain pour la création de user stories (Scrum).</li>
+</ul>
+</article>
+<article>
+<h3>Étape 4 – Backlog produit et user stories (V1 console)</h3>
+<p><strong>Objectif :</strong> Transformer le CdCF en backlog exploitable dans une démarche Scrum.</p><p><strong>État :</strong> En cours</p>
+<p><strong>Actions envisagées / en cours :</strong></p>
+<ul>
+<li>Création d’un fichier <code>product-backlog</code> dans <code>docs/</code>.</li>
+<li>Rédaction des user stories principales pour la V1 console, par exemple :</li>
+</ul>
+<p><strong>Exemples de user stories :</strong></p>
+<pre><code>US-001 - Lancer un dé simple (d6)
+En tant que joueur de D&amp;D,
+Je veux lancer un dé à 6 faces,
+Afin d'obtenir rapidement un résultat aléatoire pendant une partie en ligne.
+
+US-002 - Lancer différents types de dés D&amp;D
+En tant que joueur de D&amp;D,
+Je veux lancer différents dés (d4, d6, d8, d10, d12, d20, d100),
+Afin de couvrir l’ensemble des jets nécessaires au jeu.
+
+US-003 - Lancer plusieurs dés du même type (bonus)
+En tant que joueur de D&amp;D,
+Je veux lancer plusieurs dés du même type (par exemple 3d6),
+Afin de gérer les jets de dégâts ou des jets groupés.
+</code></pre>
+<p><strong>Compétences mises en avant :</strong></p>
+<ul>
+<li>Application de la méthode Scrum (backlog, user stories, priorisation).</li>
+<li>Capacité à faire le lien entre CdCF et backlog produit.</li>
+</ul>
+</article>
+<article>
+<h3>Étape 5 – Implémentation V1 (squelette Python)</h3>
+<p><strong>Objectif :</strong> Mettre en place la structure minimale du code pour la V1 console.</p><p><strong>État :</strong> À faire</p>
+<p><strong>Actions envisagées / en cours :</strong></p>
+<ul>
+<li>Créer une fonction principale dans <code>src/main.py</code> pour lancer le programme.</li>
+<li>Préparer un module dédié au cœur du lancer de dés (par exemple <code>src/modules/dice_roller.py</code>).</li>
+<li>Prévoir une future séparation entre :</li>
+<ul>
+<li>la logique métier (calcul des jets, critiques, modificateurs),</li>
+<li>et l’interface (ligne de commande, puis plus tard interface graphique).</li>
+</ul>
+</ul>
+<p><strong>Compétences mises en avant :</strong></p>
+<ul>
+<li>Structuration du code Python (modules, fonctions, point d’entrée).</li>
+<li>Préparation à une évolution vers des versions futures (GUI, réseau, etc.).</li>
+</ul>
+</article>
+<article>
+<h3>Étape 6 – Commit et traçabilité des étapes</h3>
+<p><strong>Objectif :</strong> Assurer une bonne traçabilité du projet dans Git.</p><p><strong>État :</strong> À faire</p><p><strong>Lien dépôt GitHub :</strong> <a href="https://github.com/xavier-deguercy/Dice_Roller_Python" rel="noopener" target="_blank">Dice_Roller_Python</a></p><p><strong>Lien commit :</strong> <span style="font-weight:700;">[À RENSEIGNER]</span> (SHA + branche, ex : <code>main</code> ou <code>sprint/01-v1-console</code>).</p>
+<p><strong>Actions envisagées / en cours :</strong></p>
+<ul>
+<li>Après chaque grande étape (arborescence, CdCF, backlog, squelette Python), effectuer :</li>
+</ul>
+<pre><code>git status
+git add .
+git commit -m "Description claire de l'étape (ex : init arbo, ajout CdCF, etc.)"
+</code></pre>
+<ul>
+<li>Utiliser des messages de commit explicites pour raconter l’histoire du projet.</li>
+<li>Éventuellement, créer des branches par sprint ou par version (ex. <code>sprint/01-v1-console</code>).</li>
+</ul>
+<p><strong>Compétences mises en avant :</strong></p>
+<ul>
+<li>Bonne pratique Git (commits réguliers, messages explicites).</li>
+<li>Capacité à relier chaque commit à une étape du journal de projet.</li>
+</ul>
+</article>
+</section>
+<section>
+<h2>4. Bilan intermédiaire</h2>
+<p><strong>À compléter au fil du projet :</strong></p>
+<ul>
+<li>Ce que j’ai appris à chaque étape (Git, Python, gestion de projet, documentation).</li>
+<li>Ce que je souhaite améliorer dans les étapes / sprints suivants.</li>
+<li>Les liens vers les commits ou les branches importants (par exemple : création du CdCF, première version fonctionnelle du Dice Roller, etc.).</li>
+</ul>
+</section>
+</main>
+<footer><div style="padding: 16px; margin-bottom: 12px; border: 4px solid #ff3b30; background: #fff6f6;"><p style="margin: 0; font-weight: 800; font-size: 1.1rem;">⚠️ À METTRE À JOUR AVANT PUBLICATION</p><p style="margin: 8px 0 0 0;">Le logo et les icônes ci-dessous proviennent de mon site perso actuel. Je dois remplacer : logo + liens + icônes pour qu’ils correspondent au projet Dice Roller.</p></div><img alt="Logo — À remplacer (Dice Roller Python)" src="images/logo.png"/><div><a class="lien-icone" href="https://github.com/xavier-deguercy/Dice_Roller_Python" rel="noopener" target="_blank"><img alt="GitHub — À remplacer l’icône" src="images/twitter.png"/></a><a class="lien-icone" href="#" rel="noopener" target="_blank"><img alt="Lien secondaire — À remplacer (LinkedIn/Portfolio)" src="images/instagram.png"/></a></div></footer>
+</body>
+</html>

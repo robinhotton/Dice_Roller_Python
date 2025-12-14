@@ -11,7 +11,7 @@ from tkinter import ttk
 # J'importe la logique métier existante (le moteur).
 # Si ta classe / fichier n'a pas exactement ce nom, tu ajusteras cette ligne.
 
-from src.core.dice_roller import DiceRoller
+from src.v1_console.dice_roller import DiceRoller
 
 
 

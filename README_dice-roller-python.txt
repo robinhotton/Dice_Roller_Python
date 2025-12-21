@@ -7,3 +7,8 @@ Structure du projet :
 - src/  : code source (V1 console, futur GUI, etc.)
 - tests/: tests automatisés
 - .github/workflows/ : configuration de CI (GitHub Actions, plus tard si besoin)
+
+
+
+afin de lancer le programme, depuis le dossier dice-roller-python, executez la commande :
+python -m src.v2_gui.app_tk^C

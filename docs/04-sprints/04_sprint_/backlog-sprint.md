@@ -1,17 +1,17 @@
-# US-003 — Lancer plusieurs dés
+# US-003 — Lancer plusieurs dés (avantage desavantage au D20)
 
 ## Description
 **En tant que** joueur de D&D  
-**Je veux** pouvoir lancer plusieurs dés du même type (ex. 3d6, 2d8, 4d10)  
+**Je veux** pouvoir lancer plusieurs dés du même type si d20   
 **Afin de** gérer les jets de dégâts, sorts et caractéristiques.
 
----
+--- a revoir car faux 
 
 ## Critères d’acceptation
 
 ### CA-1 — Lancer N dés
 **Given** je choisis un type de dé autorisé  
-(d4, d6, d8, d10, d12, d20, d100)  
+ 
 
 **When** je demande un lancer de `N` dés (`N ≥ 1`)  
 

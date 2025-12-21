@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Dice Roller GUI (module)",
+      "type": "python",
+      "request": "launch",
+      "module": "src.v2_gui.app_tk",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 # src/v2-gui/app_tk.py
 
-"""
-US-UI-001 : IHM minimale (Tkinter) - orientée objet
-Objectif : sélectionner un dé (d4..d100), cliquer "Lancer", afficher le résultat.
-"""
+
+# US-UI-001 : IHM minimale (Tkinter) - orientée objet
+# Objectif : sélectionner un dé (d4..d100), cliquer "Lancer", afficher le résultat.
+
 
 import tkinter as tk
 from tkinter import ttk
@@ -14,13 +14,11 @@ from tkinter import ttk
 from src.v1_console.dice_roller import DiceRoller
 
 
-
-
 class DiceRollerApp(tk.Tk): # hérite de tk.Tk
-    """
-    Application Tkinter orientée objet.
-    Ici je garde l'UI séparée de la logique : l'UI appelle DiceRoller, point.
-    """
+    
+    # Application Tkinter orientée objet.
+    # Ici je garde l'UI séparée de la logique : l'UI appelle DiceRoller, point.
+    
 
     DES_AUTORISES = [4, 6, 8, 10, 12, 20, 100] # liste des dés autorisés (source de vérité).
 
@@ -43,7 +41,7 @@ class DiceRollerApp(tk.Tk): # hérite de tk.Tk
         self._build_ui()
 
     def _build_ui(self): #    
-        """Je construis les widgets de l'interface (labels, dropdown, bouton)."""
+        #Je construis les widgets de l'interface (labels, dropdown, bouton).
 
         root = ttk.Frame(self, padding=16)
         root.pack(fill="both", expand=True)
@@ -83,7 +81,7 @@ class DiceRollerApp(tk.Tk): # hérite de tk.Tk
         resultat_label.pack(anchor="w")
 
     def on_roll_click(self):
-        """Action déclenchée quand je clique sur 'Lancer'."""
+        # Action déclenchée quand je clique sur 'Lancer'.
 
         # Je récupère le nombre de faces sélectionné dans le dropdown
         try:

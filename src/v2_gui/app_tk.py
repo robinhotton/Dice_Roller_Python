@@ -98,12 +98,21 @@ class DiceRollerApp(tk.Tk): # hérite de tk.Tk
         # J'appelle le moteur (logique métier)
         try:
             resultat = self.roller.roll_die(nb_faces)
+            # resultat = 1 # pour tester l'échec critique
+            # resultat = 20 # pour tester le critique 
         except Exception:
             # Je ne détaille pas l'erreur côté UI, je garde un message simple.
             self.result_var.set("Résultat : erreur au lancer")
             return
 
-        self.result_var.set(f"Résultat : d{nb_faces} → {resultat}")
+        if resultat == 20 and nb_faces == 20 :                                      # critique réussi 
+            self.result_var.set(f"🎉 {resultat} c'est une Reussite Critique ! 🎉")
+        elif resultat == 1 and nb_faces == 20 :                                     # échec critique 
+            self.result_var.set(f" Tu as fait {resultat} \n c'est un 💀 Échec critique ! 💀")
+
+        else:
+            #print(f"Résultat du lancer (d{nb_faces}) : {resultat}") # afficher le résultat
+            self.result_var.set(f"Résultat du lancer (d{nb_faces} → {resultat})")
 
 
 if __name__ == "__main__":

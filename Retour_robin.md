@@ -1,8 +1,10 @@
-Salut xavier,
+## Design Pattern Strategy
 
 Comme amélioration pour ton code, vu que tu as plusieurs façons pour lancer des dés, je te conseille de regarder le design pattern [STRATEGY](https://refactoring.guru/fr/design-patterns/strategy).
 
-Le but est de séparer la logique de chaque type de lancer dans une classe dédiée, et d'avoir une classe "contexte" qui va utiliser la stratégie choisie. Cela permet d'avoir un code plus découper entre logique et execution, pour faciliter les ajouts futurs et la maintenance.
+Le but est de séparer la logique de chaque type de lancer dans une classe fille dédiée et les contrainte a avoir la même action grâce à une classe mère.  
+C'est ton contexte (exec app) qui va choisir la classe concrete qui va être choisie.  
+Cela permet d'avoir un code plus découper entre logique et execution, pour faciliter les ajouts futurs et la maintenance.
 
 J'ai fais une ébauche d'implémentation. Pour exécuter : `python -m src.core.dice_roller`
 ```
@@ -12,3 +14,9 @@ J'ai fais une ébauche d'implémentation. Pour exécuter : `python -m src.core.d
 ```
 
 Par contre, je n'ai pas touché a tkinter.
+
+## Séparation logique / interface graphique tkinter
+
+Fais attention, Tkinter est fais pour afficher de manière graphique, ta logique que tu as codé. Evite de faire des copier coller entre les 2 parties, comme : `DES_AUTORISES = [4, 6, 8, 10, 12, 20, 100]`
+
+fait par exemple un fichier de config que tu importes dans les 2 parties.
